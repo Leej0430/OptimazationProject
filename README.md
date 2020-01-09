@@ -1,4 +1,5 @@
 # OptimazationProject
+
 Optimization Project
 •	Code was written for eighteen standard benchmark functions with different properties. Nine algorithms were implemented, Random Walk, Local Search, and Iterative Local Search, Genetic Algorithm, Differential Evolution Algorithm, Partical Swarm Optimization, Firefly Algorithm, and Harmony Search. These algorithms were written to find the optimal fitness for these eighteen functions. 
 •	An initial population matrix was created with different lengths and widths depending on the algorithm. 
