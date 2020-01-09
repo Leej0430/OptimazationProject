@@ -2,9 +2,6 @@
 package optimazation.pkg1;
 
 
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 
 /**
  *
@@ -20,7 +17,7 @@ public class CreateMatrix  {
     MTRandom rnd = new MTRandom();
     double[][] input ;
 
-    //! A constructor(default)        
+    // A constructor(default)        
     public CreateMatrix(){
         
     }
@@ -30,12 +27,13 @@ public class CreateMatrix  {
       @param int b the second argument(colums) 
     */
     public CreateMatrix(int a, int b){
-    create(a,b);
+    
+        create(a,b);
     }
-    //! A create method
+    /** A create method
    /*! this method will create input 2d arrays with all 0.0
-    *@param int length for first parameter(length)
-      *@param int size for second parameter(size)
+     * @param length length of input matrix
+     * @param size  size of input matrix
     */ 
     public void create(int length, int size){
 
@@ -43,28 +41,21 @@ public class CreateMatrix  {
         siz = size;
     }
        /** A add method
-     //!this method will fill out input with random numbers( this method will create 7 files which 
-    
-    *@param double min for first parameter( minimum range for random number)
-      !@param double max for second parameter(Maximum range for random number)
-     
+     //!this method will fill out input with random numbers( this method will create 7 files which
+     * @param min lower bound for input
+     * @param max   upper bound for input
     */ 
-    public void add(double min, double max,String a) throws FileNotFoundException, UnsupportedEncodingException{
+    public void add(double min, double max) {
 
-        try (PrintWriter writer = new PrintWriter(a)) {
-            for (double[] input1 : input) {
-                for (int j = 0; j < input1.length; j++) {
-                    // generate random number which is between min and max
-                    double randf = min+rnd.nextDouble()*(max-min);
-                    input1[j] = randf;
-                    writer.print(input1[j] + " ");
-                }
-                writer.println();
+
+        for (double[] input1 : input) {
+            for (int j = 0; j < siz; j++) {
+                // generate random number which is between min and max
+                input1[j] = min+rnd.nextDouble()*(max-min);
             }
         }
-        catch(Exception e ){
-            System.out.println("error");
-        }
+        
+       
     }
 
 
